@@ -1,0 +1,9 @@
+You are now editing your unit preferences
+<div class="center hero-unit">
+            <%= simple_form_for(@units, html: {class: 'form-horizontal' }) do |f| %>
+                <%= f.input :distance, as: :select, collection: {:Miles => 'miles',:Meters => 'meters',:Feet => 'feet'} %>
+            <%= f.input :speed %>
+            <%= f.input :currency %>
+            <%= f.button :submit %>
+        <%end%>
+	</div>

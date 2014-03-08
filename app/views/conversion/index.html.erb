@@ -1,0 +1,14 @@
+<div class= "center hero-unit">
+<!--<h1>Welcome to inrealmoney.com</h1>-->
+<p>"Show Me the Money"</p>
+<%= text_field(:conversion_field, :name, id: "conversion_field")%>
+<div id="conversion_output">
+</div>
+
+<% current_user.units.attributes.each do | unit_name, unit_value | %>
+	<% not_wanted = %w(id created_at updated_at sign_in_count user_id) %>
+		<%if ! not_wanted.include? unit_name  %>
+			<span class="label label-success"> <%= unit_name.to_s + ": " + unit_value.to_s %></span>
+	<% end %>
+<% end %>
+</div> 
